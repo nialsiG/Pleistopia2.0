@@ -27,14 +27,14 @@ grow_vertical = 2
 theme_override_constants/separation = 12
 alignment = 1
 
-[node name="Label" type="Label" parent="main_menu/VBoxContainer"]
+[node name="Title" type="Label" parent="main_menu/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
 text = "Pleistopia"
 uppercase = true
 
-[node name="Label2" type="Label" parent="main_menu/VBoxContainer"]
+[node name="Subtitle" type="Label" parent="main_menu/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
@@ -42,6 +42,7 @@ text = "A time travelling tank fantasy"
 
 [node name="Button_new_game" type="Button" parent="main_menu/VBoxContainer"]
 layout_mode = 2
+focus_neighbor_top = NodePath("../Button_quit")
 text = "New game"
 
 [node name="Button_load_game" type="Button" parent="main_menu/VBoxContainer"]
@@ -55,6 +56,7 @@ text = "Settings"
 
 [node name="Button_quit" type="Button" parent="main_menu/VBoxContainer"]
 layout_mode = 2
+focus_neighbor_bottom = NodePath("../Button_new_game")
 text = "Quit game"
 
 [connection signal="pressed" from="main_menu/VBoxContainer/Button_new_game" to="main_menu" method="_on_button_new_game_pressed"]
