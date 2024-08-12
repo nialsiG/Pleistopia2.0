@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://bwtjgp0nubtp0"]
+[gd_scene load_steps=2 format=3 uid="uid://bwtjgp0nubtp0"]
+
+[ext_resource type="PackedScene" uid="uid://vbhj4wk0uwha" path="res://scenes/player.tscn" id="1_muwlk"]
 
 [node name="world" type="Node2D"]
 
@@ -6,3 +8,12 @@
 offset_right = 40.0
 offset_bottom = 23.0
 text = "This is the world scene"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(222, 274)
+polygon = PackedVector2Array(-90, 262, 180, 262, 411, 50, 382, -123, 318, 55, 206, 151)
+
+[node name="player" parent="." instance=ExtResource("1_muwlk")]
+position = Vector2(283, 227)

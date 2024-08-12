@@ -8,9 +8,12 @@ extends Control
 @onready var start_button = $VBoxContainer/Button_new_game
 @onready var back_button = $VBoxContainer2/Button_back
 
+#region Gameloop
 func _ready():
 	show_title()
+#endregion
 
+#region Events
 func _on_button_new_game_pressed():
 	get_tree().change_scene_to_file(start_file)
 
@@ -25,7 +28,9 @@ func _on_button_quit_pressed():
 
 func _on_button_back_pressed():
 	show_title()
+#endregion
 
+#region Methods
 func show_title():
 	settings_container.hide()
 	title_container.show()
@@ -35,3 +40,4 @@ func show_settings():
 	title_container.hide()
 	settings_container.show()
 	back_button.grab_focus()
+#endregion
