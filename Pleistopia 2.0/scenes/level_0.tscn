@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://0yxrx807v3qx"]
+
+[ext_resource type="PackedScene" uid="uid://dff4mr2e7jh2a" path="res://scenes/player_sentinel.tscn" id="1_e1mgq"]
+[ext_resource type="Texture2D" uid="uid://c7y5g2efpqk5v" path="res://icon.svg" id="2_65ard"]
+
+[node name="level_0" type="Node2D"]
+
+[node name="player_sentinel" parent="." instance=ExtResource("1_e1mgq")]
+SPRITE = ExtResource("2_65ard")

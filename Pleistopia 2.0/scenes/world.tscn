@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bwtjgp0nubtp0"]
+[gd_scene load_steps=3 format=3 uid="uid://bwtjgp0nubtp0"]
 
 [ext_resource type="PackedScene" uid="uid://vbhj4wk0uwha" path="res://scenes/player.tscn" id="1_muwlk"]
+[ext_resource type="PackedScene" uid="uid://b88tmbonuocle" path="res://scenes/interact_area.tscn" id="2_02isu"]
 
 [node name="world" type="Node2D"]
 
@@ -17,3 +18,8 @@ polygon = PackedVector2Array(-90, 262, 180, 262, 411, 50, 382, -123, 318, 55, 20
 
 [node name="player" parent="." instance=ExtResource("1_muwlk")]
 position = Vector2(283, 227)
+
+[node name="interact_area" parent="." instance=ExtResource("2_02isu")]
+position = Vector2(605, 3)
+interact_label = "Press E"
+interact_type = "go_to_custom_menu"
