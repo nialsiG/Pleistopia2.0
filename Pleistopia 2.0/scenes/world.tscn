@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bwtjgp0nubtp0"]
 
 [ext_resource type="PackedScene" uid="uid://vbhj4wk0uwha" path="res://scenes/player.tscn" id="1_muwlk"]
-[ext_resource type="PackedScene" uid="uid://b88tmbonuocle" path="res://scenes/interact_area.tscn" id="2_02isu"]
+[ext_resource type="PackedScene" uid="uid://b76d5t66df8qr" path="res://scenes/npc.tscn" id="3_5bokf"]
 
 [node name="world" type="Node2D"]
 
@@ -19,7 +19,7 @@ polygon = PackedVector2Array(-90, 262, 180, 262, 411, 50, 382, -123, 318, 55, 20
 [node name="player" parent="." instance=ExtResource("1_muwlk")]
 position = Vector2(283, 227)
 
-[node name="interact_area" parent="." instance=ExtResource("2_02isu")]
-position = Vector2(605, 3)
+[node name="NPC" parent="." instance=ExtResource("3_5bokf")]
+position = Vector2(84, 432)
 interact_label = "Press E"
 interact_type = "go_to_custom_menu"

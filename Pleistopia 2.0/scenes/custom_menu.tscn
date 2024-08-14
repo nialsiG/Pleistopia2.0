@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://b5xot2bq8qy3c"]
+[gd_scene load_steps=4 format=3 uid="uid://b5xot2bq8qy3c"]
 
 [ext_resource type="Script" path="res://scripts/custom_menu.gd" id="1_qs34l"]
+[ext_resource type="Texture2D" uid="uid://bopplj6l0kkab" path="res://assets/sprites/playerBody.png" id="2_rds47"]
+[ext_resource type="Texture2D" uid="uid://bb7lu4elffbfl" path="res://assets/sprites/enemyBody.png" id="3_041lk"]
 
 [node name="custom_menu" type="Node2D"]
 
@@ -25,7 +27,7 @@ grow_vertical = 2
 
 [node name="Label" type="Label" parent="Control/VBoxContainer"]
 layout_mode = 2
-text = "Title of menu"
+text = "Sentinel customization:"
 
 [node name="GridContainer" type="GridContainer" parent="Control/VBoxContainer"]
 layout_mode = 2
@@ -40,6 +42,7 @@ text = "option 1"
 
 [node name="CheckButton" type="CheckButton" parent="Control/VBoxContainer/GridContainer/HBoxContainer"]
 layout_mode = 2
+focus_neighbor_top = NodePath("../../../Button")
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="Control/VBoxContainer/GridContainer"]
 layout_mode = 2
@@ -71,8 +74,24 @@ text = "option 4"
 [node name="CheckButton" type="CheckButton" parent="Control/VBoxContainer/GridContainer/HBoxContainer4"]
 layout_mode = 2
 
+[node name="HBoxContainer5" type="HBoxContainer" parent="Control/VBoxContainer/GridContainer"]
+layout_mode = 2
+
+[node name="MenuButton" type="MenuButton" parent="Control/VBoxContainer/GridContainer/HBoxContainer5"]
+layout_mode = 2
+text = "Select hull"
+flat = false
+item_count = 2
+popup/item_0/text = "Hull 1"
+popup/item_0/icon = ExtResource("2_rds47")
+popup/item_0/id = 0
+popup/item_1/text = "Hull 2"
+popup/item_1/icon = ExtResource("3_041lk")
+popup/item_1/id = 1
+
 [node name="Button" type="Button" parent="Control/VBoxContainer"]
 layout_mode = 2
+focus_neighbor_bottom = NodePath("../GridContainer/HBoxContainer/CheckButton")
 text = "Ready to go"
 
 [connection signal="pressed" from="Control/VBoxContainer/Button" to="Control" method="_on_button_pressed"]

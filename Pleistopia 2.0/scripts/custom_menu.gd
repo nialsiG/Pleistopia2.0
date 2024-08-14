@@ -1,16 +1,13 @@
 extends Control
 
 @onready var level_0 = "res://scenes/level_0.tscn"
+@onready var first_button = $VBoxContainer/GridContainer/HBoxContainer/CheckButton
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	first_button.grab_focus()
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
-
 
 func _on_button_pressed():
 	get_tree().change_scene_to_file(level_0)
