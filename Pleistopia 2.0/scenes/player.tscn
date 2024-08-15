@@ -1,11 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://vbhj4wk0uwha"]
+[gd_scene load_steps=6 format=3 uid="uid://vbhj4wk0uwha"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_66eci"]
-[ext_resource type="Texture2D" uid="uid://c7y5g2efpqk5v" path="res://icon.svg" id="2_jbj7e"]
+[ext_resource type="Texture2D" uid="uid://dbxd6d4ti211h" path="res://assets/sprites/main_character.png" id="2_ux6ib"]
 [ext_resource type="PackedScene" uid="uid://drvxtobidouor" path="res://scenes/interaction_component.tscn" id="3_2yool"]
+[ext_resource type="PackedScene" uid="uid://blakpdq3gr8oi" path="res://scenes/ui_rpg.tscn" id="4_vd10k"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_x3es1"]
-size = Vector2(118, 118)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8sgik"]
+radius = 8.0
+height = 32.0
 
 [node name="player" type="CharacterBody2D"]
 script = ExtResource("1_66eci")
@@ -13,13 +15,16 @@ MAX_SPEED = 400
 ACCELERATION = 1400
 FRICTION = 1500
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_jbj7e")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_x3es1")
+shape = SubResource("CapsuleShape2D_8sgik")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="interaction_component" parent="." instance=ExtResource("3_2yool")]
 z_index = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 1
+texture = ExtResource("2_ux6ib")
+
+[node name="ui_rpg" parent="." instance=ExtResource("4_vd10k")]

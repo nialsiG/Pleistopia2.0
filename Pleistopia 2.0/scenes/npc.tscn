@@ -5,20 +5,19 @@
 [ext_resource type="PackedScene" uid="uid://b88tmbonuocle" path="res://scenes/interact_area.tscn" id="3_nv2ou"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cg2be"]
-radius = 26.0
-height = 94.0
+radius = 7.0
+height = 32.0
 
 [node name="NPC" type="CharacterBody2D"]
 script = ExtResource("1_4ixna")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(1.90735e-06, 1.90735e-06)
-scale = Vector2(3.375, 3.375)
-texture = ExtResource("1_5a7g8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_cg2be")
 
 [node name="interact_area" parent="." instance=ExtResource("3_nv2ou")]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1.90735e-06, 1.90735e-06)
+texture = ExtResource("1_5a7g8")
 
 [connection signal="property_list_changed" from="interact_area" to="." method="_on_interact_area_property_list_changed"]

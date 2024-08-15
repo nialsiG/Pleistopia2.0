@@ -14,11 +14,11 @@ func _process(delta):
 #endregion
 
 #region Update interaction
-func _on_area_2d_area_entered(area):
+func _on_area_entered(area):
 	all_interactions.insert(0, area)
 	update_interaction()
 
-func _on_area_2d_area_exited(area):
+func _on_area_exited(area):
 	all_interactions.erase(area)
 	update_interaction()
 

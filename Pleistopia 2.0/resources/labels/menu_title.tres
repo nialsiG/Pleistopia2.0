@@ -1,0 +1,7 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://bwp5a8gov2iuv"]
+
+[ext_resource type="FontFile" uid="uid://jagn5clfl403" path="res://assets/ui/fonts/Calistoga-Regular.ttf" id="1_pkmtd"]
+
+[resource]
+font = ExtResource("1_pkmtd")
+font_size = 60

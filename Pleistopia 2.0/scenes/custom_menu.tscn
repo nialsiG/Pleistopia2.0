@@ -1,83 +1,44 @@
-[gd_scene load_steps=4 format=3 uid="uid://b5xot2bq8qy3c"]
+[gd_scene load_steps=7 format=3 uid="uid://b5xot2bq8qy3c"]
 
 [ext_resource type="Script" path="res://scripts/custom_menu.gd" id="1_qs34l"]
 [ext_resource type="Texture2D" uid="uid://bopplj6l0kkab" path="res://assets/sprites/playerBody.png" id="2_rds47"]
 [ext_resource type="Texture2D" uid="uid://bb7lu4elffbfl" path="res://assets/sprites/enemyBody.png" id="3_041lk"]
+[ext_resource type="Texture2D" uid="uid://dfb6xutywgi1m" path="res://assets/sprites/playerHead.png" id="4_50334"]
+[ext_resource type="Texture2D" uid="uid://cfta66d3unikt" path="res://assets/sprites/enemyHead.png" id="5_k2ypy"]
+[ext_resource type="PackedScene" uid="uid://dff4mr2e7jh2a" path="res://scenes/player_sentinel.tscn" id="6_8q7om"]
 
-[node name="custom_menu" type="Node2D"]
+[node name="custom_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_qs34l")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1151.0
 offset_bottom = 650.0
-script = ExtResource("1_qs34l")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 52.0
 offset_top = 31.0
-offset_right = -653.0
-offset_bottom = -40.0
+offset_right = 280.0
+offset_bottom = 180.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="Control/VBoxContainer"]
+[node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 text = "Sentinel customization:"
 
-[node name="GridContainer" type="GridContainer" parent="Control/VBoxContainer"]
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer"]
 layout_mode = 2
 columns = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/VBoxContainer/GridContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="Control/VBoxContainer/GridContainer/HBoxContainer"]
-layout_mode = 2
-text = "option 1"
-
-[node name="CheckButton" type="CheckButton" parent="Control/VBoxContainer/GridContainer/HBoxContainer"]
-layout_mode = 2
-focus_neighbor_top = NodePath("../../../Button")
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="Control/VBoxContainer/GridContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="Control/VBoxContainer/GridContainer/HBoxContainer2"]
-layout_mode = 2
-text = "option 2"
-
-[node name="CheckButton" type="CheckButton" parent="Control/VBoxContainer/GridContainer/HBoxContainer2"]
-layout_mode = 2
-
-[node name="HBoxContainer3" type="HBoxContainer" parent="Control/VBoxContainer/GridContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="Control/VBoxContainer/GridContainer/HBoxContainer3"]
-layout_mode = 2
-text = "option 3"
-
-[node name="CheckButton" type="CheckButton" parent="Control/VBoxContainer/GridContainer/HBoxContainer3"]
-layout_mode = 2
-
-[node name="HBoxContainer4" type="HBoxContainer" parent="Control/VBoxContainer/GridContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="Control/VBoxContainer/GridContainer/HBoxContainer4"]
-layout_mode = 2
-text = "option 4"
-
-[node name="CheckButton" type="CheckButton" parent="Control/VBoxContainer/GridContainer/HBoxContainer4"]
-layout_mode = 2
-
-[node name="HBoxContainer5" type="HBoxContainer" parent="Control/VBoxContainer/GridContainer"]
-layout_mode = 2
-
-[node name="MenuButton" type="MenuButton" parent="Control/VBoxContainer/GridContainer/HBoxContainer5"]
+[node name="ChooseHullButton" type="MenuButton" parent="VBoxContainer/GridContainer"]
 layout_mode = 2
 text = "Select hull"
 flat = false
@@ -89,9 +50,68 @@ popup/item_1/text = "Hull 2"
 popup/item_1/icon = ExtResource("3_041lk")
 popup/item_1/id = 1
 
-[node name="Button" type="Button" parent="Control/VBoxContainer"]
+[node name="ChooseHeadButton" type="MenuButton" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Select turret"
+flat = false
+item_count = 2
+popup/item_0/text = "Turret 1"
+popup/item_0/icon = ExtResource("4_50334")
+popup/item_0/id = 0
+popup/item_1/text = "Turret 2"
+popup/item_1/icon = ExtResource("5_k2ypy")
+popup/item_1/id = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/GridContainer/HBoxContainer"]
+layout_mode = 2
+text = "option 1"
+
+[node name="CheckButton" type="CheckButton" parent="VBoxContainer/GridContainer/HBoxContainer"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../../../StartButton")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/GridContainer/HBoxContainer2"]
+layout_mode = 2
+text = "option 2"
+
+[node name="CheckButton" type="CheckButton" parent="VBoxContainer/GridContainer/HBoxContainer2"]
+layout_mode = 2
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/GridContainer/HBoxContainer3"]
+layout_mode = 2
+text = "option 3"
+
+[node name="CheckButton" type="CheckButton" parent="VBoxContainer/GridContainer/HBoxContainer3"]
+layout_mode = 2
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/GridContainer/HBoxContainer4"]
+layout_mode = 2
+text = "option 4"
+
+[node name="CheckButton" type="CheckButton" parent="VBoxContainer/GridContainer/HBoxContainer4"]
+layout_mode = 2
+
+[node name="StartButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 focus_neighbor_bottom = NodePath("../GridContainer/HBoxContainer/CheckButton")
 text = "Ready to go"
 
-[connection signal="pressed" from="Control/VBoxContainer/Button" to="Control" method="_on_button_pressed"]
+[node name="player_sentinel" parent="." instance=ExtResource("6_8q7om")]
+position = Vector2(434, 117)
+CAN_MOVE = false
+
+[connection signal="toggled" from="VBoxContainer/GridContainer/ChooseHullButton" to="." method="_on_choose_hull_button_toggled"]
+[connection signal="toggled" from="VBoxContainer/GridContainer/ChooseHeadButton" to="." method="_on_choose_head_button_toggled"]
+[connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
