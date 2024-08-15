@@ -42,4 +42,6 @@ func _on_head_menu_pressed(id: int):
 	head_model.texture = head_menu_button.get_popup().get_item_icon(id)
 
 func _on_start_button_pressed():
+	Sentinel.current_head = head_model.texture
+	Sentinel.current_hull = hull_model.texture
 	get_tree().change_scene_to_file(level_0)
