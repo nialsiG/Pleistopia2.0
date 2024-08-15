@@ -20,4 +20,5 @@ texture = ExtResource("1_5a7g8")
 shape = SubResource("CapsuleShape2D_cg2be")
 
 [node name="interact_area" parent="." instance=ExtResource("3_nv2ou")]
-interact_label = "Press E"
+
+[connection signal="property_list_changed" from="interact_area" to="." method="_on_interact_area_property_list_changed"]

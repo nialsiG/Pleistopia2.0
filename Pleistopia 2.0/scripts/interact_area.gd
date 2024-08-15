@@ -1,4 +1,5 @@
 class_name Interactable extends Area2D
 
-@export var interact_label = "none"
-@export var interact_type = "none"
+@onready var interact_type = 0
+@onready var interact_label = "Press E"
+@onready var message = "..."

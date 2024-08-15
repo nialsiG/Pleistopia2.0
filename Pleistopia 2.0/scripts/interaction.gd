@@ -9,9 +9,11 @@ func _ready():
 
 func _process(delta):
 	if Input.is_action_just_pressed("interact"):
-		interact()
+		print("pressed E")
+		trigger_interaction()
 #endregion
 
+#region Update interaction
 func _on_area_2d_area_entered(area):
 	all_interactions.insert(0, area)
 	update_interaction()
@@ -25,9 +27,14 @@ func update_interaction():
 		interact_label.text = all_interactions[0].interact_label
 	else:
 		interact_label.text = ""
+#endregion
 
-func interact():
+#region Trigger interaction
+func trigger_interaction():
 	if all_interactions:
-		var current = all_interactions[0]
-		match current.interact_type:
-			"go_to_custom_menu" : get_tree().change_scene_to_file("res://scenes/custom_menu.tscn")
+		print("An interaction triggered...")
+		match all_interactions[0].interact_type:
+			1 : print("This is a message") 
+			2 : print("This is a dialog")
+			4 : print("This is an event")
+#endregion
