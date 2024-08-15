@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://0ewyr71gqr"]
+
+[ext_resource type="PackedScene" uid="uid://dk2xcmy14lc3n" path="res://scenes/pause_menu.tscn" id="1_nss1i"]
+
+[node name="ui_roguelite" type="Control"]
+z_index = 10
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="pause_menu" parent="." instance=ExtResource("1_nss1i")]
+layout_mode = 1
