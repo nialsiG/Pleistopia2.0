@@ -4,7 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://dk2xcmy14lc3n" path="res://scenes/pause_menu.tscn" id="1_nss1i"]
 
 [node name="ui_roguelite" type="Control"]
-z_index = 10
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5

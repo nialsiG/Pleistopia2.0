@@ -3,7 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://dk2xcmy14lc3n" path="res://scenes/pause_menu.tscn" id="1_rsulr"]
 
 [node name="ui_rpg" type="Control"]
-z_index = 10
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
