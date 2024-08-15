@@ -2,6 +2,7 @@ extends CharacterBody2D
 class_name Sentinel
 
 @export var CAN_MOVE = true
+@export var SHOW_HUD = true
 @export var MAX_SPEED = 500
 @export var ACCELERATION = 1500
 @export var FRICTION = 1200
