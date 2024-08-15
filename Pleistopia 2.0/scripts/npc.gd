@@ -6,8 +6,10 @@ class_name NPC
 @export var message = "..."
 
 @onready var interact_area = $interact_area
+@onready var dialog_label = $CanvasLayer/ColorRect/dialog_label
 
 func _ready():
 	interact_area.interact_type = interact_type
 	interact_area.interact_label = interact_label
 	interact_area.message = message
+

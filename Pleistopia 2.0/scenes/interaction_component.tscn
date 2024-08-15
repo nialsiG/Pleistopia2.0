@@ -1,11 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://drvxtobidouor"]
+[gd_scene load_steps=4 format=3 uid="uid://drvxtobidouor"]
 
 [ext_resource type="Script" path="res://scripts/interaction.gd" id="1_5j1wp"]
+[ext_resource type="LabelSettings" uid="uid://bwp5a8gov2iuv" path="res://resources/labels/menu_title.tres" id="2_0hmbs"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7araa"]
 radius = 64.0
 
 [node name="interaction_component" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
 script = ExtResource("1_5j1wp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -21,6 +24,30 @@ offset_right = 59.0
 offset_bottom = -28.0
 grow_horizontal = 2
 text = "label"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -229.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.129412, 0.176471, 0.231373, 0.686275)
+
+[node name="dialog_label" type="Label" parent="CanvasLayer/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "This is a message"
+label_settings = ExtResource("2_0hmbs")
 horizontal_alignment = 1
 vertical_alignment = 1
 

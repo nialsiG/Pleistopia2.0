@@ -5,30 +5,25 @@
 [ext_resource type="Texture2D" uid="uid://bb7lu4elffbfl" path="res://assets/sprites/enemyBody.png" id="3_041lk"]
 [ext_resource type="Texture2D" uid="uid://dfb6xutywgi1m" path="res://assets/sprites/playerHead.png" id="4_50334"]
 [ext_resource type="Texture2D" uid="uid://cfta66d3unikt" path="res://assets/sprites/enemyHead.png" id="5_k2ypy"]
-[ext_resource type="PackedScene" uid="uid://dff4mr2e7jh2a" path="res://scenes/player_sentinel.tscn" id="6_8q7om"]
+[ext_resource type="Texture2D" uid="uid://dulp6vthnwh5l" path="res://assets/ui/uiBackgroundTop.png" id="6_au22a"]
 
-[node name="custom_menu" type="Control"]
-layout_mode = 3
-anchors_preset = 0
+[node name="custom_menu" type="CanvasLayer"]
 script = ExtResource("1_qs34l")
-
-[node name="Control" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 1151.0
-offset_bottom = 650.0
+hull_1 = ExtResource("2_rds47")
+hull_2 = ExtResource("3_041lk")
+head_1 = ExtResource("4_50334")
+head_2 = ExtResource("5_k2ypy")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 52.0
-offset_top = 31.0
-offset_right = 280.0
-offset_bottom = 180.0
+offset_left = -150.0
+offset_right = 150.0
 grow_horizontal = 2
 grow_vertical = 2
+alignment = 1
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
@@ -42,25 +37,11 @@ columns = 2
 layout_mode = 2
 text = "Select hull"
 flat = false
-item_count = 2
-popup/item_0/text = "Hull 1"
-popup/item_0/icon = ExtResource("2_rds47")
-popup/item_0/id = 0
-popup/item_1/text = "Hull 2"
-popup/item_1/icon = ExtResource("3_041lk")
-popup/item_1/id = 1
 
 [node name="ChooseHeadButton" type="MenuButton" parent="VBoxContainer/GridContainer"]
 layout_mode = 2
 text = "Select turret"
 flat = false
-item_count = 2
-popup/item_0/text = "Turret 1"
-popup/item_0/icon = ExtResource("4_50334")
-popup/item_0/id = 0
-popup/item_1/text = "Turret 2"
-popup/item_1/icon = ExtResource("5_k2ypy")
-popup/item_1/id = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/GridContainer"]
 layout_mode = 2
@@ -103,15 +84,24 @@ text = "option 4"
 [node name="CheckButton" type="CheckButton" parent="VBoxContainer/GridContainer/HBoxContainer4"]
 layout_mode = 2
 
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("6_au22a")
+
+[node name="hull_sprite" type="Sprite2D" parent="VBoxContainer/TextureRect"]
+position = Vector2(148, 58)
+scale = Vector2(1.86538, 1.86538)
+texture = ExtResource("3_041lk")
+
+[node name="head_sprite" type="Sprite2D" parent="VBoxContainer/TextureRect"]
+position = Vector2(148, 58)
+scale = Vector2(1.86538, 1.86538)
+texture = ExtResource("5_k2ypy")
+offset = Vector2(16, 0)
+
 [node name="StartButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 focus_neighbor_bottom = NodePath("../GridContainer/HBoxContainer/CheckButton")
 text = "Ready to go"
 
-[node name="player_sentinel" parent="." instance=ExtResource("6_8q7om")]
-position = Vector2(434, 117)
-CAN_MOVE = false
-
-[connection signal="toggled" from="VBoxContainer/GridContainer/ChooseHullButton" to="." method="_on_choose_hull_button_toggled"]
-[connection signal="toggled" from="VBoxContainer/GridContainer/ChooseHeadButton" to="." method="_on_choose_head_button_toggled"]
 [connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
