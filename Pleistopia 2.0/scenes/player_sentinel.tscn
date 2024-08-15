@@ -14,6 +14,7 @@ HEAD = ExtResource("2_e0f61")
 HULL = ExtResource("3_cgya5")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(1.5, 1.5)
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 
@@ -23,3 +24,4 @@ shape = SubResource("CapsuleShape2D_wq48t")
 [node name="hull_sprite" type="Sprite2D" parent="."]
 
 [node name="head_sprite" type="Sprite2D" parent="hull_sprite"]
+offset = Vector2(16, 0)
