@@ -60,6 +60,7 @@ focus_neighbor_bottom = NodePath("../Button_new_game")
 text = "Quit game"
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="main_menu"]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
