@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bwtjgp0nubtp0"]
+[gd_scene load_steps=6 format=3 uid="uid://bwtjgp0nubtp0"]
 
 [ext_resource type="PackedScene" uid="uid://vbhj4wk0uwha" path="res://scenes/player.tscn" id="1_muwlk"]
 [ext_resource type="TileSet" uid="uid://bqke02voxyqrj" path="res://resources/tilesets/basic_tileset.tres" id="1_slahn"]
 [ext_resource type="PackedScene" uid="uid://b76d5t66df8qr" path="res://scenes/npc.tscn" id="3_5bokf"]
 [ext_resource type="PackedScene" uid="uid://6uvyrsduqffv" path="res://scenes/door.tscn" id="4_ebeto"]
+[ext_resource type="PackedScene" uid="uid://blakpdq3gr8oi" path="res://scenes/ui_rpg.tscn" id="5_6lics"]
 
 [node name="world" type="Node2D"]
 
@@ -46,3 +47,9 @@ position = Vector2(283, 227)
 [node name="door" parent="Doors" instance=ExtResource("4_ebeto")]
 position = Vector2(257, -110)
 target_scene = "res://scenes/custom_menu.tscn"
+
+[node name="UI" type="CanvasLayer" parent="."]
+layer = 10
+
+[node name="ui_rpg" parent="UI" instance=ExtResource("5_6lics")]
+z_index = 0

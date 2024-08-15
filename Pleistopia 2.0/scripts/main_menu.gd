@@ -1,4 +1,4 @@
-extends Control
+extends CanvasLayer
 
 @onready var start_file = "res://scenes/world.tscn"
 

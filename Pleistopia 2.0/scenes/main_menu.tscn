@@ -1,0 +1,76 @@
+[gd_scene load_steps=2 format=3 uid="uid://cqmmqn5sqo02d"]
+
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_fy8p7"]
+
+[node name="main_menu" type="CanvasLayer"]
+script = ExtResource("1_fy8p7")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 587.0
+offset_right = -587.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="Title" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "Pleistopia"
+uppercase = true
+
+[node name="Subtitle" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "A time travelling tank fantasy"
+
+[node name="Button_new_game" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../Button_quit")
+text = "New game"
+
+[node name="Button_load_game" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+disabled = true
+text = "Load game"
+
+[node name="Button_settings" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Settings"
+
+[node name="Button_quit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+focus_neighbor_bottom = NodePath("../Button_new_game")
+text = "Quit game"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -361.0
+offset_top = -178.0
+offset_right = 361.0
+offset_bottom = 178.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="Button_back" type="Button" parent="VBoxContainer2"]
+layout_mode = 2
+text = "Back"
+
+[connection signal="pressed" from="VBoxContainer/Button_new_game" to="." method="_on_button_new_game_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button_load_game" to="." method="_on_button_load_game_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button_settings" to="." method="_on_button_settings_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button_quit" to="." method="_on_button_quit_pressed"]
+[connection signal="pressed" from="VBoxContainer2/Button_back" to="." method="_on_button_back_pressed"]

@@ -1,11 +1,13 @@
 extends Control
 
-@onready var start_menu = "res://scenes/menu.tscn"
+@onready var start_menu = "res://scenes/main_menu.tscn"
 @onready var pause_panel = $Panel
-@onready var is_paused = false
+
+static var is_paused: bool
 
 func _ready():
-	pause_panel.hide()
+	is_paused = true
+	pause_unpause()
 
 func _process(delta):
 	if Input.is_action_just_pressed("pause_unpause"):

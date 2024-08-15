@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/player_sentinel.gd" id="1_haf3x"]
 [ext_resource type="Texture2D" uid="uid://dfb6xutywgi1m" path="res://assets/sprites/playerHead.png" id="2_e0f61"]
 [ext_resource type="Texture2D" uid="uid://bopplj6l0kkab" path="res://assets/sprites/playerBody.png" id="3_cgya5"]
-[ext_resource type="PackedScene" uid="uid://0ewyr71gqr" path="res://scenes/ui_roguelite.tscn" id="4_skyll"]
+[ext_resource type="PackedScene" uid="uid://drvxtobidouor" path="res://scenes/interaction_component.tscn" id="4_p0avi"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wq48t"]
 radius = 39.0
@@ -26,4 +26,4 @@ shape = SubResource("CapsuleShape2D_wq48t")
 [node name="head_sprite" type="Sprite2D" parent="hull_sprite"]
 offset = Vector2(16, 0)
 
-[node name="ui_roguelite" parent="." instance=ExtResource("4_skyll")]
+[node name="interaction_component" parent="." instance=ExtResource("4_p0avi")]
